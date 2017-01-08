@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,400" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <div class="container">
+    <h1>Budget Planner</h1>
+    <h4>Change Time Period: </h6>
+    <select id="main_timescale">
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+    </select>
+    <form>
+      <fieldset class="rounded" id="income_fieldset">
+        
+        <div class="field_legend_container"><legend ><span class="number">1. </span>Income<span class="field-total" id="income_field_total">0$</span></legend></div>
+       
+        <div id="income_input_field_container">
+        <div class="wrapper" id="net_pay_container">
+          <label for="net_pay">Your Net Pay</label>
+          <input class="input" type="text" id="net_pay" name="user_pay">
+          <select id="net_pay_timescale">
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+
+        <div class="wrapper" id="partner_net_container">
+          <label for="partner_net">Your Partner's Net Pay</label>
+          <input type="text" id="partner_net" name="user_partner_pay">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="bonus">Bonuses</label>
+          <input type="text" id="bonus" name="user_bonus">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="invesments_savings">Investments &amp; Savings</label>
+          <input type="text" id="investments_savings" name="user_investments_savings">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="family_benefits">Family Benefit Payments</label>
+          <input type="text" id="family_benefits" name="user_family_benefits">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="other_income">Other</label>
+          <input type="text" id="other_income" name="user_other_income">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div >
+        <div class="wrapper">
+        <button type="button" id="income_submit">Submit</button>
+        <button type="button" id="income_reset" class="reset" name="user_income_reset">Reset</button>
+        </div>
+      </div>  
+      </fieldset>
+      
+      <fieldset class="rounded">
+      
+        <div class="field_legend_container"><legend ><span class="number">2. </span>Home &amp; Utility<span class="field-total">0$</span></legend></div>
+        
+        <div id="home_util_input_field_container">
+        <div class="wrapper">
+          <label for="mortgage_rent">Mortgage &amp; Rent</label>
+          <input type="text" id="mortgage_rent" name="user_mortgage_rent">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="hoa_dues">HOA Dues</label>
+          <input type="text" id="hoa_dues" name="user_hoa_dues">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="furniture_appliances">Furniture &amp; Appliances</label>
+          <input type="text" id="furniture_appliances" name="user_furniture_appliances">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="renovations_maint">Renovations &amp; Maintenance</label>
+          <input type="text" id="renovations_maint" name="user_renovations_maint">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="electricity">Electricity</label>
+          <input type="text" id="electricity" name="user_electricity">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div class="wrapper">
+          
+        <div class="wrapper">
+          <label for="gas">Gas</label>
+          <input type="text" id="gas" name="user_gas">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="water">Water</label>
+          <input type="text" id="water" name="user_water">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="internet">Internet</label>
+          <input type="text" id="internet" name="user_internet">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="tv">Television</label>
+          <input type="text" id="tv" name="user_tv">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="home_phone">Home Phone</label>
+          <input type="text" id="home_phone" name="user_home_phone">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="cell_phone">Mobile Phone</label>
+          <input type="text" id="cell_phone" name="user_cell_phone">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="other_home_utitity">Other</label>
+          <input type="text" id="other_home_utitity" name="user_home_utility">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+      </div>  
+      </fieldset>
+      
+      <fieldset class="rounded">
+       
+       <div class="field_legend_container">
+        <legend><span class="number">3. </span>Insurance &amp; Financial<span class="field-total">0$</span></legend></div>
+        
+        <div id="insurance_input_field_container">
+        <div class="wrapper">
+          <label for="car_insurance">Car Insurance</label>
+          <input type="text" id="car_insurance" name="user_car_insurance">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="home_renters_insurance">Home &amp; Renter's Insurance</label>
+          <input type="text" id="home_renters_insurance" name="user_home_renters_insurance">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="life_insurance">Life Insurance</label>
+          <input type="text" id="life_insurance" name="user_life_insurance">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="pet_health_insurance">Pet Health Insurance</label>
+          <input type="text" id="pet_health_insurance" name="user_pet_health_insurance">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="car_loan">Car Loan</label>
+          <input type="text" id="pet_health_insurance" name="user_pet_health_insurance">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="credit_card">Credit Card</label>
+          <input type="text" id="credit_card" name="user_credit_card">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="loan_debt">Loan Debt</label>
+          <input type="text" id="loan_debt" name="user_loan_debt">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="personal_debt">Personal Debt</label>
+          <input type="text" id="personal_debt" name="user_personal_debt">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="savings">Savings</label>
+          <input type="text" id="savings" name="user_savings">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="investments">Investments</label>
+          <input type="text" id="investments" name="user_investments">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="retirement_contributions">Retirement Contributions</label>
+          <input type="text" id="retirement_contributions" name="user_retirement_contributions">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="charitable_contributions">Charitable Contributions</label>
+          <input type="text" id="charitable_contributions" name="user_charitable_contributions">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="other_insurance_financial">Other</label>
+          <input type="text" id="other_insurance_financial" name="user_other_insurance_financial">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+       </div> 
+      </fieldset>
+      
+      <fieldset class="rounded">
+       
+        <legend><span class="number">4. </span>Groceries<span class="field-total">0$</span></legend>
+        
+        
+        <div class="wrapper grocery-wrapper"> <!--begin proteins-->
+        <div class="field_legend_container"> 
+          <label class="group-label">Proteins: </label>
+        </div> 
+        <div id="proteins_container"> 
+          <div>
+            <label for="red_meats">Red Meats</label>
+            <input type="text" id="red_meats" name="user_red_meats">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="poultry">Poultry</label>
+            <input type="text" id="poultry" name="user_poultry">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="eggs">Eggs</label>
+            <input type="text" id="eggs" name="user_eggs">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="fish">Fish</label>
+            <input type="text" id="fish" name="user_fish">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+          <div>
+            <label for="beans">Beans</label>
+            <input type="text" id="beans" name="user_beans">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+          </select>
+          </div>
+        
+          
+          <div>
+            <label for="nuts">Nuts</label>
+            <input type="text" id="nuts" name="user_nuts">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+
+         </div> 
+        </div>
+        
+        
+        <div class="wrapper grocery-wrapper">
+        <label class="group-label">Dairy: </label>
+          <div >
+            <label for="milk">Milk</label>
+            <input type="text" id="milk" name="user_milk">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div >
+            <label for="cheese">Cheese</label>
+            <input type="text" id="cheese" name="user_cheese">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="yogurt">Yogurt</label>
+            <input type="text" id="yogurt" name="user_yogurt">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+        </div>
+        
+        
+        <div class="wrapper grocery-wrapper">
+        <label class="group-label">Grains: </label>
+          <div>
+            <label for="bread">Bread</label>
+            <input type="text" id="bread" name="user_bread">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="cereal">Cereal</label>
+            <input type="text" id="cereal" name="user_cereal">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="rice">Rice</label>
+            <input type="text" id="rice" name="user_rice">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="pasta">Pasta</label>
+            <input type="text" id="pasta" name="user_pasta">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="flour">Flour</label>
+            <input type="text" id="flour" name="user_flour">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        </div>
+        
+        <div class="wrapper grocery-wrapper">
+        <label class="group-label">Extras: </label>
+          <div>
+            <label for="tea_coffee">Tea &amp; Coffee</label>
+            <input type="text" id="tea_coffee" name="user_tea_coffee">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="spices">Spices</label>
+            <input type="text" id="spices" name="user_spices">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+          
+        </div>
+        
+        <div class="wrapper">
+            <label for="vegetables">Vegetables</label>
+            <input type="text" id="vegetables" name="user_vegetables">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        <div class="wrapper">
+            <label for="fruits">Fruits</label>
+            <input type="text" id="fruits" name="user_fruits">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        <div class="wrapper">
+            <label for="pet_food">Pet Food</label>
+            <input type="text" id="pet_food" name="user_pet_food">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        <div class="wrapper">
+            <label for="pet_supplies">Pet Supplies</label>
+            <input type="text" id="pet_supplies" name="user_pet_supplies">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        <div class="wrapper">
+            <label for="paper_products">Paper Products</label>
+            <input type="text" id="paper_products" name="user_paper_products">
+            <select>
+              <option value="52">Weekly</option>
+              <option value="26">Bi-Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        
+        <div class="wrapper">
+          <label for="other_grocery">Other</label>
+          <input type="text" id="other_grocery" name="user_other_grocery">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+      
+        
+      </fieldset>
+      
+      <fieldset class="rounded">
+      
+        <legend><span class="number">5. </span>Personal &amp; Medical<span class="field-total">0$</span></legend>
+        
+        <div class="wrapper">
+          <label for="toiletries">Toiletries</label>
+          <input type="text" id="toiletries" name="user_toiletries">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="cosmetics_beauty">Cosmetics &amp; Beauty</label>
+          <input type="text" id="cosmetics_beauty" name="user_cosmetics_beauty">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="medicines">Medicines</label>
+          <input type="text" id="medicines" name="user_medicines">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="glasses_optical">Glasses &amp; Optical Care</label>
+          <input type="text" id="glasses_optical" name="user_glasses_optical">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="dental_care">Dental Care</label>
+          <input type="text" id="dental_care" name="user_dental_care">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="doctor_medical">Doctor Visits &amp; General Medical</label>
+          <input type="text" id="doctor_medical" name="user_doctor_medical">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="hobbies">Hobbies</label>
+          <input type="text" id="hobbies" name="user_hobbies">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="clothing_jewelry">Clothing, Jewelry &amp; Accessories</label>
+          <input type="text" id="clothing_jewelry" name="user_clothing_jewelry">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="computer_gadgets">Computer &amp; Gadgets</label>
+          <input type="text" id="computer_gadgets" name="user_computer_gadgets">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="sports_gym">Sports &amp; Gym</label>
+          <input type="text" id="sports_gym" name="user_sports_gym">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="education">Education</label>
+          <input type="text" id="education" name="user_education">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="veterinary">Veterinary Care</label>
+          <input type="text" id="veterinary" name="user_veterinary">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="other_personal_medical">Other</label>
+          <input type="text" id="other_personal_medical" name="user_other_personal_medical">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+      </fieldset>
+      
+      <fieldset class="rounded">
+     
+        <legend><span class="number">6. </span>Entertainment &amp; Leisure<span class="field-total">0$</span></legend>
+        
+        <div class="wrapper">
+          <label for="lunches">Lunches (prepared)</label>
+          <input type="text" id="lunches" name="user_lunches">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="cigs">Cigarettes</label>
+          <input type="text" id="cigs" name="user_cigs">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="alcohol">Drinking &amp; Alcohol</label>
+          <input type="text" id="alcohol" name="user_alcohol">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="clubs">Clubs</label>
+          <input type="text" id="clubs" name="user_clubs">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="restaurants">Restaurants</label>
+          <input type="text" id="restaurants" name="user_restaurants">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="news_and_subs">Newspaper &amp; Online Subscriptions</label>
+          <input type="text" id="news_and_subs" name="user_news_and_subs">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="games">Games</label>
+          <input type="text" id="games" name="user_games">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="other_ent">Other</label>
+          <input type="text" id="other_ent" name="user_other_ent">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        
+        
+      </fieldset>
+      
+      <fieldset class="rounded">
+      
+        <legend><span class="number">7. </span>Transport<span class="field-total">0$</span></legend>
+        
+        <div class="wrapper">
+          <label for="gas">Gasoline</label>
+          <input type="text" id="gas" name="user_gas">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="tolls_and_parking">Road Tolls &amp; Parking</label>
+          <input type="text" id="tolls_and_parking" name="user_tolls_and_parking">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="fees_reg_license">Fees, Registreation &amp; Licensure</label>
+          <input type="text" id="fees_reg_license" name="user_fees_reg_license">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="maint_repair">Maintenance &amp; Repair</label>
+          <input type="text" id="maint_repair" name="user_maint_repair">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="airfare">Airfare</label>
+          <input type="text" id="airfare" name="user_airfare">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="bus_metro_ferry">Bus, Metro &amp; Ferry</label>
+          <input type="text" id="bus_metro_ferry" name="user_bus_metro_ferry">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="trans_other">Bus, Metro &amp; Ferry</label>
+          <input type="text" id="trans_other" name="user_trans_other">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+      </fieldset>
+      
+      
+      <fieldset class="rounded">
+      
+        <legend ><span class="number">8. </span>Children<span class="field-total">0$</span></legend>
+        
+        <div class="wrapper">
+          <label for="baby_products">Baby Products &amp; Toys</label>
+          <input type="text" id="baby_products" name="user_baby_products">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+        <div class="wrapper">
+          <label for="childcare">Childcare &amp; Babysitting</label>
+          <input type="text" id="childcare" name="user_childcare">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>  
+        
+        <div class="wrapper">
+          <label for="sports_clubs">Sports &amp; Clubs</label>
+          <input type="text" id="sports_clubs" name="user_sports_clubs">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="tuition_fees">School Tuition &amp; Fees</label>
+          <input type="text" id="tuition_fees" name="user_tuition_fees">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="school_supplies">School Supplies</label>
+          <input type="text" id="school_supplies" name="user_school_supplies">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="kids_clothes">Clothes &amp; School Uniforms</label>
+          <input type="text" id="kids_clothes" name="user_kids_clothes">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+          
+         <div class="wrapper">
+          <label for="child_support_payments">Child Support Payments</label>
+          <input type="text" id="child_support_payments" name="user_child_support_payments">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+        <div class="wrapper">
+          <label for="other_children">Other</label>
+          <input type="text" id="other_children" name="user_other_children">
+          <select>
+            <option value="52">Weekly</option>
+            <option value="26">Bi-Weekly</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+          </select>
+        </div>
+        
+      </fieldset>
+      
+      <fieldset class="rounded">
+      
+        <legend><span class="number">9. </span>Summary<span class="field-total">0$</span></legend>
+       
+        
+      </fieldset>
+    </form>
+    </div>
+    <footer>
+      <p>&copy; 2016 Louie Williford</p>
+    </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>  
+  <!--- <script rel="script" src="brains.js"></script> --> 
+  <script rel="script" src="example.js"></script>
+  </body>
+</html>
